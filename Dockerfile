@@ -1,4 +1,5 @@
 FROM richarvey/nginx-php-fpm:1.9.1
+ADD src/ /var/www/html/
 ADD scripts/start.sh /start.sh
 RUN chmod 755 /start.sh
 
