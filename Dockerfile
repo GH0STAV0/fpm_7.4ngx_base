@@ -3,7 +3,7 @@ ADD src/ /var/www/html/
 ADD scripts/start.sh /start.sh
 RUN chmod 755 /start.sh
 
-RUN apt install -y libgd-dev libc-client-dev libkrb5-dev && \
+RUN apk add --no-cache libgd-dev libc-client-dev libkrb5-dev && \
     set -eux; \
     PHP_OPENSSL=yes docker-php-ext-configure imap --with-kerberos --with-imap-ssl; \
     docker-php-ext-install imap 
